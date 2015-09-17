@@ -1,0 +1,25 @@
+{
+  "name": "fis3-deploy-alioss",
+  "version": "1.0.0",
+  "description": "fis3 deploy Aliyun OSS plugin",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iversong/fis3-deploy-alioss"
+  },
+  "keywords": [
+    "fis3",
+    "deploy",
+    "aliyun",
+    "plugin"
+  ],
+  "author": "iversong",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/iversong/fis3-deploy-alioss/issues"
+  },
+  "homepage": "https://github.com/iversong/fis3-deploy-alioss",
+  "dependencies": {
+    "aliyun-sdk": "^1.6.0"
+  }
+}
