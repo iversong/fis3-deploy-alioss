@@ -28,18 +28,20 @@ fis.match('*.js', {
 参数中ossServer配置服务器地址
 
 - 根据你的 oss 实例所在地区选择填入
-  杭州：http://oss-cn-hangzhou.aliyuncs.com
-  北京：http://oss-cn-beijing.aliyuncs.com
-  青岛：http://oss-cn-qingdao.aliyuncs.com
-  深圳：http://oss-cn-shenzhen.aliyuncs.com
-  香港：http://oss-cn-hongkong.aliyuncs.com
+
+  杭州：http://oss-cn-hangzhou.aliyuncs.com  
+  北京：http://oss-cn-beijing.aliyuncs.com  
+  青岛：http://oss-cn-qingdao.aliyuncs.com  
+  深圳：http://oss-cn-shenzhen.aliyuncs.com  
+  香港：http://oss-cn-hongkong.aliyuncs.com  
 
 - 注意：如果你是在阿里云 ECS 上连接 OSS，可以使用内网地址，速度快，没有带宽限制。
-  杭州：http://oss-cn-hangzhou-internal.aliyuncs.com
-  北京：http://oss-cn-beijing-internal.aliyuncs.com
-  青岛：http://oss-cn-qingdao-internal.aliyuncs.com
-  深圳：http://oss-cn-shenzhen-internal.aliyuncs.com
-  香港：http://oss-cn-hongkong-internal.aliyuncs.com
+
+  杭州：http://oss-cn-hangzhou-internal.aliyuncs.com  
+  北京：http://oss-cn-beijing-internal.aliyuncs.com  
+  青岛：http://oss-cn-qingdao-internal.aliyuncs.com  
+  深圳：http://oss-cn-shenzhen-internal.aliyuncs.com  
+  香港：http://oss-cn-hongkong-internal.aliyuncs.com  
 
 ## 参考
 
