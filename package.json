@@ -1,6 +1,6 @@
 {
   "name": "fis3-deploy-alioss",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "fis3 deploy Aliyun OSS plugin",
   "main": "index.js",
   "repository": {

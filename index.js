@@ -60,12 +60,12 @@ module.exports = function(options, modified, total, callback, next) {
   } else if (!options.bucket) {
     throw new Error('options.bucket is required!');
   }
-
+  var ossServer = options.ossServer ? options.ossServer : 'http://oss-cn-hangzhou.aliyuncs.com';
   aliyunoss = new ALY.OSS({
     "accessKeyId": options.accessKey,
     "secretAccessKey": options.secretKey,
     securityToken: "",
-    endpoint: 'http://oss-cn-hangzhou.aliyuncs.com',
+    endpoint: ossServer,
     apiVersion: '2013-10-15'
   });
 
@@ -81,7 +81,7 @@ module.exports = function(options, modified, total, callback, next) {
           if (!--reTryCount) {
             throw new Error(error);
           } else {
-            upload();
+            _upload();
           }
         } else {
           next(); //由于是异步的如果后续还需要执行必须调用 next
