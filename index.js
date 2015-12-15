@@ -27,7 +27,7 @@ function uploadOss(bucket, release, content, file,callback) {
     ContentDisposition: '',           // 参考: http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1
     ContentEncoding: 'utf-8',         // 参考: http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11
     ServerSideEncryption: '',
-    Expires: 60
+    Expires: new Date().getTime() + 1000*24*60*60*1000
   },function (err, data) {
       if(err){
         console.log('error:', err);
