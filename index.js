@@ -25,7 +25,6 @@ function uploadOss(bucket, release, content, file,callback) {
     ContentType: contenttype,
     CacheControl: 'cache',         // 参考: http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9
     ContentDisposition: '',           // 参考: http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1
-    ContentEncoding: 'utf-8',         // 参考: http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11
     ServerSideEncryption: '',
     Expires: 60
   },function (err, data) {
