@@ -17,6 +17,10 @@ function uploadOss(bucket, release, content, file,callback) {
   {
     contenttype = "text/css";
   }
+  if(file.isHtmlLike)
+  {
+    contenttype = "text/html";
+  }
   aliyunoss.putObject({
     Bucket: bucket,
     Key: objkey,
