@@ -10,7 +10,6 @@ function uploadOss(bucket, release, content, file,callback) {
   var subpath = file.subpath;
   var objkey = release.replace(/^\//, '');
   var contenttype = mime.lookup(subpath);
-console.log(contenttype);
 
   aliyunoss.putObject({
     Bucket: bucket,
