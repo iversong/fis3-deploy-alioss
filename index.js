@@ -9,7 +9,7 @@ var aliyunoss = null;
 function uploadOss(bucket, release, content, file,callback) {
   var subpath = file.subpath;
   var objkey = release.replace(/^\//, '');
-  var contenttype = mime.lookup(subpath);
+  var contenttype = mime.lookup(release);
 
   aliyunoss.putObject({
     Bucket: bucket,
