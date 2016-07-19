@@ -82,12 +82,15 @@ module.exports = function(options, modified, total, callback, next) {
       });
     });
   });
+  steps.push(function(next) {
+    console.log('\n已全部上传到AliyunOSS\n');
+    next();
+  });
   fis.util.reduceRight(steps, function(next, current) {
     return function() {
       current(next);
     };
   }, callback)();
-  console.log('\n已全部上传到AliyunOSS\n');
 };
 
 module.exports.options = {
