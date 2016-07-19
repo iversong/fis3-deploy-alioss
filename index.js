@@ -80,7 +80,6 @@ module.exports = function(options, modified, total, callback, next) {
           next(); //由于是异步的如果后续还需要执行必须调用 next
         }
       });
-      console.log('\n已全部上传到AliyunOSS\n');
     });
   });
   fis.util.reduceRight(steps, function(next, current) {
@@ -88,6 +87,7 @@ module.exports = function(options, modified, total, callback, next) {
       current(next);
     };
   }, callback)();
+  console.log('\n已全部上传到AliyunOSS\n');
 };
 
 module.exports.options = {
