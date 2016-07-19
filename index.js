@@ -27,12 +27,12 @@ function uploadOss(bucket, release, content, file,callback) {
       } else {
         var time = '[' + fis.log.now(true) + ']';
         process.stdout.write(
+            '\n' +
             ' uploadoss - '.green.bold +
-            time.grey + ' ' + 
+            time.grey + ' ' +
             subpath.replace(/^\//, '') +
             ' >> '.yellow.bold +
-           objkey + "---"+contenttype+
-            '\n'
+            objkey + "---" + contenttype
         );
         callback();
       }
@@ -80,6 +80,7 @@ module.exports = function(options, modified, total, callback, next) {
           next(); //由于是异步的如果后续还需要执行必须调用 next
         }
       });
+      console.log('\n已全部上传到AliyunOSS\n');
     });
   });
   fis.util.reduceRight(steps, function(next, current) {
