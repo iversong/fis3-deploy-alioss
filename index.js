@@ -3,20 +3,14 @@
  */
 
 var ALY = require("aliyun-sdk");
+var mime = require('mime');
 var aliyunoss = null;
 
 function uploadOss(bucket, release, content, file,callback) {
   var subpath = file.subpath;
   var objkey = release.replace(/^\//, '');
-  var contenttype = "";
-  if(file.isJsLike)
-  {
-    contenttype = "application/javascript";
-  }
-  if(file.isCssLike)
-  {
-    contenttype = "text/css";
-  }
+  var contenttype = mime.lookup(release);
+
   aliyunoss.putObject({
     Bucket: bucket,
     Key: objkey,
@@ -33,12 +27,12 @@ function uploadOss(bucket, release, content, file,callback) {
       } else {
         var time = '[' + fis.log.now(true) + ']';
         process.stdout.write(
+            '\n' +
             ' uploadoss - '.green.bold +
-            time.grey + ' ' + 
+            time.grey + ' ' +
             subpath.replace(/^\//, '') +
             ' >> '.yellow.bold +
-           objkey + "---"+contenttype+
-            '\n'
+            objkey + "---" + contenttype
         );
         callback();
       }
@@ -87,6 +81,10 @@ module.exports = function(options, modified, total, callback, next) {
         }
       });
     });
+  });
+  steps.push(function(next) {
+    console.log('\n已全部上传到AliyunOSS\n');
+    next();
   });
   fis.util.reduceRight(steps, function(next, current) {
     return function() {

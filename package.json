@@ -1,6 +1,6 @@
 {
   "name": "fis3-deploy-alioss",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "fis fis3 deploy Aliyun OSS plugin",
   "main": "index.js",
   "repository": {
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/iversong/fis3-deploy-alioss",
   "dependencies": {
-    "aliyun-sdk": "^1.6.0"
+    "aliyun-sdk": "^1.6.0",
+    "mime": "^1.3.4"
   }
 }
